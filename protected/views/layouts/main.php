@@ -46,7 +46,7 @@
     <!-- footer -->
     <div id="footer">
       <div class="container">
-        <p class="muted credit">© 2013 LearnTrack.</p>
+        <p class="muted credit"> @ 2013 LearnTrack.</p>
       </div>
     </div>
     
