@@ -15,7 +15,7 @@
   </head>
   <body>
     <div id="wrap">	
-        <div class="navbar navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
                     <a class="brand" href="#">LearnTrack</a>
@@ -46,7 +46,7 @@
     <!-- footer -->
     <div id="footer">
       <div class="container">
-        <p class="muted credit">© 2013 LearnTrack.</p>
+        <p class="muted credit"> @ 2013 LearnTrack.</p>
       </div>
     </div>
     
