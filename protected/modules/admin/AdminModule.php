@@ -12,6 +12,8 @@ class AdminModule extends CWebModule
 			'admin.models.*',
 			'admin.components.*',
 		));
+		
+		Yii::app()->theme = 'charisma'; 
 	}
 
 	public function beforeControllerAction($controller, $action)

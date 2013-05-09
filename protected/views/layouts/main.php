@@ -30,6 +30,7 @@
                                 array('label' => 'Dashboard', 'url'=>array('/site/index')),
                                 //array('label' => 'Blog', 'url'=>array('/post')),
                             	array('label' => 'Demo', 'url'=>array('/demo')),
+                            	array('label' => 'Admin', 'url' => array('/admin'))
                             ),
                         ));
                         ?>

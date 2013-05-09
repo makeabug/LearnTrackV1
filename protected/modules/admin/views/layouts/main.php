@@ -18,7 +18,7 @@
         <div class="navbar navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="brand" href="#">LearnTrack</a>
+                    <a class="brand" href="#">LearnTrack Admin</a>
                     <div class="nav-collapse collapse">
                         <?php 
                         $this->widget('zii.widgets.CMenu', array(
