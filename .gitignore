@@ -1,0 +1,7 @@
+.settings
+.buildpath
+.project
+assets/*
+protected/runtime/*
+protected/data/*
+*.swp
