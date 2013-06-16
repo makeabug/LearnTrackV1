@@ -4,14 +4,23 @@
 /* @var $form CActiveForm */
 ?>
 
-<div class="form">
-
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'post-form',
 	'enableAjaxValidation'=>false,
+    'htmlOptions' => array(
+        'class'=>'form-horizontal'
+    )
 )); ?>
+    <fieldset>
+        <legend>Fields with <span class="required">*</span> are required.</legend>
+        <div class='control-group'>
+            <?php echo $form->labelEx($model,'title', array('class'=>'control-label')); ?>
+            <div class='controls'>
+                <?php echo $form->textField($model,'title',array('size'=>60,'maxlength'=>256, 'class'=>'input-xlarge')); ?>
+            </div>
+        </div>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note"></p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -57,4 +66,4 @@
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+<!-- form -->
