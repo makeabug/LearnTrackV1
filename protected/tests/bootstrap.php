@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Chongqing');
 
 // change the following paths if necessary
 $yiit=dirname(__FILE__).'/../../../framework/yiit.php';

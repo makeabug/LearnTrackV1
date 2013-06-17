@@ -2,7 +2,57 @@
 
 class PostTest extends CDbTestCase 
 {
-    public function testCRUD()
+    public $fixtures = array(
+        'posts' => 'Post'
+    );
+
+    public function testCreate()
+    {
+        $newPost = new Post();
+        $newPostTitle = 'Test Post Creation';
+        $newPost->setAttributes(array(
+            'title' => $newPostTitle,
+            'content' => 'This is a test for new post creation.',
+            'create_time' => '2013-06-06 00:00:00',
+            'create_user_id' => 1,
+            'update_time' => '2013-06-06 00:00:00',
+            'update_user_id' => 1
+        ));
+        $this->assertTrue($newPost->save(false));
+
+        $retrievedPost = Post::model()->findByPk($newPost->id);
+        $this->assertTrue($retrievedPost instanceof Post);
+        $this->assertEquals($newPostTitle, $retrievedPost->title);
+    }
+
+    public function testRead()
+    {
+        $retrievedPost = $this->posts('post1');
+        $this->assertTrue($retrievedPost instanceof Post);
+        $this->assertEquals('Test Post 1', $retrievedPost->title);
+    }
+
+    public function testUpdate()
+    {
+        $post = $this->posts('post2');
+        $updatePostTitle = 'Updated Test Post 2';
+        $post->title = $updatePostTitle;
+        $this->assertTrue($post->save(false));
+        $updatedPost = Post::model()->findByPk($post->id);
+        $this->assertTrue($updatedPost instanceof Post);
+        $this->assertEquals($updatePostTitle, $updatedPost->title);
+    }
+
+    public function testDelete()
+    {
+        $post = $this->posts('post2');
+        $savedPostId = $post->id;
+        $this->assertTrue($post->delete());
+        $deletedPost = Post::model()->findByPk($savedPostId);
+        $this->assertEquals(NULL, $deletedPost);
+    }
+
+    /*public function testCRUD()
     {
         $newPost = new Post();
         $newPostTitle = 'Test Post 1';
@@ -32,5 +82,5 @@ class PostTest extends CDbTestCase
         $this->assertTrue($newPost->delete());
         $deletedPost = Post::model()->findByPk($newPostId);
         $this->assertEquals(null, $deletedPost);
-    }
+    }*/
 }
