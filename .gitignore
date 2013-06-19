@@ -1,13 +1,10 @@
 .settings
 .buildpath
 .project
-<<<<<<< HEAD
 assets/
 protected/data/
 protected/runtime/
-=======
 assets/*
 protected/runtime/*
 protected/data/*
 *.swp
->>>>>>> ed5e0f13d835ed39c6562249be61d152e71ac75f

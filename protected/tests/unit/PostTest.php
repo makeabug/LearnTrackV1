@@ -3,7 +3,8 @@
 class PostTest extends CDbTestCase 
 {
     public $fixtures = array(
-        'posts' => 'Post'
+       	'posts' => 'Post',
+		'users' => 'User'
     );
 
     public function testCreate()
@@ -13,16 +14,14 @@ class PostTest extends CDbTestCase
         $newPost->setAttributes(array(
             'title' => $newPostTitle,
             'content' => 'This is a test for new post creation.',
-            'create_time' => '2013-06-06 00:00:00',
-            'create_user_id' => 1,
-            'update_time' => '2013-06-06 00:00:00',
-            'update_user_id' => 1
         ));
-        $this->assertTrue($newPost->save(false));
+        Yii::app()->user->setId($this->users('user1')->id);
+        $this->assertTrue($newPost->save());
 
         $retrievedPost = Post::model()->findByPk($newPost->id);
         $this->assertTrue($retrievedPost instanceof Post);
         $this->assertEquals($newPostTitle, $retrievedPost->title);
+        $this->assertEquals(Yii::app()->user->id, $retrievedPost->create_user_id);
     }
 
     public function testRead()

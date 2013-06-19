@@ -32,7 +32,7 @@
             <?php echo $form->error($model,'content'); ?>
         </div>
 
-        <div class='control-group'>
+        <!-- <div class='control-group'>
             <?php echo $form->labelEx($model,'create_time', array('class'=>'control-label')); ?>
             <div class='controls'>
                 <?php echo $form->textField($model,'create_time', array('size'=>60,'maxlength'=>256, 'class'=>'input-xlarge')); ?>
@@ -62,7 +62,7 @@
                 <?php echo $form->textField($model,'update_user_id', array('size'=>60,'maxlength'=>256, 'class'=>'input-xlarge')); ?>
             </div>
             <?php echo $form->error($model,'update_user_id'); ?>
-        </div>
+        </div>  -->
 
         <div class='form-actions'>
             <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class'=>'btn btn-primary')); ?>
