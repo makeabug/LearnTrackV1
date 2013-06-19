@@ -127,7 +127,7 @@
 			<!-- content starts -->
 			
 
-			<div>
+			<!-- <div>
 				<ul class="breadcrumb">
 					<li>
 						<a href="#">Home</a> <span class="divider">/</span>
@@ -136,7 +136,14 @@
 						<a href="#">Blank</a>
 					</li>
 				</ul>
-			</div>
+			</div> -->
+			<!-- breadcrumbs -->
+			<?php 
+				$this->widget('zii.widgets.CBreadcrumbs', array( 
+					'links'=>$this->breadcrumbs,
+				)); 
+			?>
+			<!-- breadcrumbs -->
 
             <?php echo $content;?>
 
