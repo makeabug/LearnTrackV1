@@ -27,7 +27,7 @@
         <div class='control-group'>
             <?php echo $form->labelEx($model,'content', array('class'=>'control-label')); ?>
             <div class='controls'>
-                <?php echo $form->textArea($model,'content',array('rows'=>6, 'style'=>'width:500px;height:197px;')); ?>
+                <?php echo $form->textArea($model,'content',array('rows'=>6, 'style'=>'width:840px;height:400px;')); ?>
             </div>
             <?php echo $form->error($model,'content'); ?>
         </div>

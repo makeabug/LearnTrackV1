@@ -3,7 +3,7 @@
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Posts',
+	'Blogs',
 );
 
 $this->menu=array(
@@ -17,11 +17,16 @@ $this->menu=array(
 <div class="row-fluid sortable ui-sortable">		
 	<div class="box span12">
 		<div class="box-header well" data-original-title="">
-			<h2><i class="icon-edit"></i> Posts</h2>
+			<h2><i class="icon-edit"></i> Blogs</h2>
 			<div class="box-icon">
-				<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+				<!-- <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
 				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a> -->
+				<?php 
+					echo CHtml::link('<i class="icon-plus"></i>', 
+						array('/admin/post/create'), 
+						array('class'=>'btn btn-close btn-round', 'title'=>'Create Blog'));
+				?>
 			</div>
 		</div>
 		<div class="box-content">

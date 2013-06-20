@@ -3,7 +3,7 @@
 /* @var $model Post */
 
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
+	'Blogs'=>array('index'),
 	'Create',
 );
 
@@ -16,11 +16,13 @@ $this->menu=array(
 <div class="row-fluid sortable ui-sortable">		
 	<div class="box span12">
 		<div class="box-header well" data-original-title="">
-			<h2><i class="icon-edit"></i> Create Post</h2>
+			<h2><i class="icon-edit"></i> Create Blog</h2>
 			<div class="box-icon">
-				<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+				<?php 
+					echo CHtml::link('<i class="icon-list"></i>', 
+						array('/admin/post'), 
+						array('class'=>'btn btn-close btn-round', 'title'=>'Blog List'));
+				?>
 			</div>
 		</div>
 		<div class="box-content">

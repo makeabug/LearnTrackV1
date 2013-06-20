@@ -3,16 +3,16 @@
 /* @var $model Post */
 
 $this->breadcrumbs=array(
-	'Posts'=>array('index'),
+	'Blogs'=>array('index'),
 	$model->title=>array('view','id'=>$model->id),
 	'Update',
 );
 
 $this->menu=array(
-	array('label'=>'List Post', 'url'=>array('index')),
-	array('label'=>'Create Post', 'url'=>array('create')),
-	array('label'=>'View Post', 'url'=>array('view', 'id'=>$model->id)),
-	array('label'=>'Manage Post', 'url'=>array('admin')),
+	array('label'=>'List Blog', 'url'=>array('index')),
+	array('label'=>'Create Blog', 'url'=>array('create')),
+	array('label'=>'View Blog', 'url'=>array('view', 'id'=>$model->id)),
+	array('label'=>'Manage Blog', 'url'=>array('admin')),
 );
 ?>
 
@@ -21,9 +21,11 @@ $this->menu=array(
 		<div class="box-header well" data-original-title="">
 			<h2><i class="icon-edit"></i> Update Post <?php echo $model->id; ?></h2>
 			<div class="box-icon">
-				<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-				<a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+				<?php 
+					echo CHtml::link('<i class="icon-list"></i>', 
+						array('/admin/post'), 
+						array('class'=>'btn btn-close btn-round', 'title'=>'Blog List'));
+				?>
 			</div>
 		</div>
 		<div class="box-content">
