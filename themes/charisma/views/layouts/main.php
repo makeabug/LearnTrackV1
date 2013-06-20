@@ -138,11 +138,19 @@
 				</ul>
 			</div> -->
 			<!-- breadcrumbs -->
-			<?php 
-				$this->widget('zii.widgets.CBreadcrumbs', array( 
-					'links'=>$this->breadcrumbs,
-				)); 
-			?>
+			<div>
+				<?php 
+					$this->widget('zii.widgets.CBreadcrumbs', array( 
+						'links'=>$this->breadcrumbs,
+						'htmlOptions' => array('class'=>'breadcrumb'),
+						'tagName' => 'ul',
+						'separator' => '<span class="divider">/</span>',
+						'homeLink' => '<li>' . CHtml::link('Dashboard', array('/admin')) . '</li>',
+						'inactiveLinkTemplate' => '<li><span>{label}</span></li>',
+						'activeLinkTemplate' => '<li><a href="{url}">{label}</a></li>',
+					)); 
+				?>
+			</div>
 			<!-- breadcrumbs -->
 
             <?php echo $content;?>
