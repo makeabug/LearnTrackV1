@@ -77,7 +77,7 @@
 					<ul class="dropdown-menu">
 						<li><a href="#">Profile</a></li>
 						<li class="divider"></li>
-						<li><a href="login.html">Logout</a></li>
+						<li><?php echo CHtml::link('Logout', array('/site/logout'))?></li>
 					</ul>
 				</div>
 				<!-- user dropdown ends -->
@@ -105,7 +105,7 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">Main</li>
 						<li class="active"><a class="ajax-link" href="<?php echo Yii::app()->createUrl('/admin'); ?>"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-						<li><a class="ajax-link" href="<?php echo Yii::app()->createUrl('/admin/post'); ?>"><i class="icon-edit"></i><span class="hidden-tablet"> Blog</span></a></li>
+						<li><a class="ajax-link" href="<?php echo Yii::app()->createUrl('/post'); ?>"><i class="icon-edit"></i><span class="hidden-tablet"> Blog</span></a></li>
 						<li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
 						<li class="nav-header hidden-tablet">Sample Section</li>
 						<li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
@@ -192,6 +192,7 @@
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/jquery-ui-1.8.21.custom.min.js"></script>
 	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/charisma.js"></script>
+	<script src="<?php echo Yii::app()->theme->baseUrl; ?>/js/bootstrap-dropdown.js"></script>
 
 </body>
 </html>

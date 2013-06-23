@@ -24,7 +24,7 @@ $this->menu=array(
 				<a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a> -->
 				<?php 
 					echo CHtml::link('<i class="icon-plus"></i>', 
-						array('/admin/post/create'), 
+						array('/post/create'), 
 						array('class'=>'btn btn-close btn-round', 'title'=>'Create Blog'));
 				?>
 			</div>

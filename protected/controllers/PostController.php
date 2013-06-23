@@ -1,7 +1,9 @@
 <?php
 
-class PostController extends AbstractAdminController
+class PostController extends LearnTrackController
 {
+	 
+	
 	/**
 	 * @return array action filters
 	 */

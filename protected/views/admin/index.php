@@ -1,3 +1,10 @@
+<?php
+/* @var $this AdminController */
+
+$this->breadcrumbs=array(
+	'Admin',
+);
+?>
 <?php 
     //Yii::app()->clientScript->registerCssFile( Yii::app()->theme->baseUrl . '/css/opa-icons.css', 'screen');
 ?>
