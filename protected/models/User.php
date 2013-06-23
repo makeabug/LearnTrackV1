@@ -14,8 +14,10 @@
  * @property string $updated_at
  * @property integer $update_user_id
  */
-class User extends CActiveRecord
+class User extends LearnTrackActiveRecord
 {
+	public $password_repeat;
+	
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -42,10 +44,11 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email', 'required'),
-			array('create_user_id, update_user_id', 'numerical', 'integerOnly'=>true),
+			array('email, username, password', 'required'),
 			array('email, username, password', 'length', 'max'=>256),
-			array('last_login_time, created_at, updated_at', 'safe'),
+			array('email, username', 'unique'),
+			array('password', 'compare'),
+			array('password_repeat', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, email, username, password, last_login_time, created_at, create_user_id, updated_at, update_user_id', 'safe', 'on'=>'search'),
@@ -74,9 +77,9 @@ class User extends CActiveRecord
 			'username' => 'Username',
 			'password' => 'Password',
 			'last_login_time' => 'Last Login Time',
-			'created_at' => 'Created At',
+			'created_time' => 'Created At',
 			'create_user_id' => 'Create User',
-			'updated_at' => 'Updated At',
+			'updated_time' => 'Updated At',
 			'update_user_id' => 'Update User',
 		);
 	}
@@ -97,13 +100,24 @@ class User extends CActiveRecord
 		$criteria->compare('username',$this->username,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('last_login_time',$this->last_login_time,true);
-		$criteria->compare('created_at',$this->created_at,true);
+		$criteria->compare('created_time',$this->created_time,true);
 		$criteria->compare('create_user_id',$this->create_user_id);
-		$criteria->compare('updated_at',$this->updated_at,true);
+		$criteria->compare('updated_time',$this->updated_time,true);
 		$criteria->compare('update_user_id',$this->update_user_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+	
+	public function afterValidate()
+	{
+		parent::afterValidate();
+		$this->password = $this->encrypt($this->password);
+	}
+	
+	public function encrypt($value)
+	{
+		return md5($value);
 	}
 }
